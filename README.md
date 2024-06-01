@@ -38,7 +38,23 @@ You're all ready to start using the ShushEngine!
 
 The stepper motor driver chips used are [Trinamic TMC5160](https://www.trinamic.com/fileadmin/assets/Products/ICs_Documents/TMC5160A_Datasheet_Rev1.14.pdf), which use 256 microsteps per full step.  Most common stepper motors have 200 steps per revolution, or 1.8 degrees per step.  Therefore, if you want to go 1 full revolution, the TMC5160 would need a command to go 51,200 microsteps (256 * 200).  Keep this in mind for the following example.
 
-The following example assumes the wiring according to Trinamic’s TMC5130-BOB Raspberry Pi [example](https://blog.trinamic.com/2019/03/29/internet-of-moving-things-tmc5130-raspberry-pi-3b/). This breakout board is similar to the TMC5160-BOB.
+The following example assumes the wiring as so
+
+```
+RASPBERRY PI        | BOB
+ --------------------------
+ (17) +3V3          | VCC_IO
+ (19) SPI_MOSI      | SDI
+ (21) SPI_MISO      | SDO
+ (23) SPI_SCK       | SCK
+ (24) SPI_CE0_N     | CSN
+ (25) GND           | GND
+
+Put connect following pins of the BOB to GND, too:
+CLK16 (enables internal clock)
+DRV_ENN (enables driver)
+```
+The source is internet archive version of Trinamic’s TMC5130-BOB Raspberry Pi [example](https://web.archive.org/web/20190506140418/http://blog.trinamic.com/2019/03/29/internet-of-moving-things-tmc5130-raspberry-pi-3b). This breakout board is similar to the TMC5160-BOB.
 
 Below is a simple Python script to get the motor spinning.  You can run this by typing `python3 example.py` (once you're in the `/ShushEngine` root folder).  The example code is as follows:
 
