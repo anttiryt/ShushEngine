@@ -36,7 +36,7 @@ You're all ready to start using the ShushEngine!
 
 ### Simple Motor Control
 
-The stepper motor driver chips used are [Trinamic TMC5160](https://www.trinamic.com/fileadmin/assets/Products/ICs_Documents/TMC5160A_Datasheet_Rev1.14.pdf), which use 256 microsteps per full step.  Most common stepper motors have 200 steps per revolution, or 1.8 degrees per step.  Therefore, if you want to go 1 full revolution, the TMC5160 would need a command to go 51,200 microsteps (256 * 200).  Keep this in mind for the following example.
+The stepper motor driver chips used are [Trinamic TMC5160](https://web.archive.org/web/20210308151032/https://www.trinamic.com/fileadmin/assets/Products/ICs_Documents/TMC5160A_Datasheet_Rev1.14.pdf)(internet archive), which use 256 microsteps per full step.  Most common stepper motors have 200 steps per revolution, or 1.8 degrees per step.  Therefore, if you want to go 1 full revolution, the TMC5160 would need a command to go 51,200 microsteps (256 * 200).  Keep this in mind for the following example.
 
 The following example assumes the wiring as so
 
